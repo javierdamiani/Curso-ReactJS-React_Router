@@ -3,7 +3,12 @@ import { useNavigate, Navigate, useLocation } from "react-router-dom";
 
 const adminList = ["JavierD", "IsisC"];
 const editorList = ["MT4", "JH3"];
-const userList = ["Andre", "Claudia", "Javier"];
+const userList = ["Andre", "Javier"];
+
+// function User(username) {
+// 	this.username = username;
+// 	this.roles = {};
+// }
 
 const AuthContext = React.createContext();
 
@@ -17,8 +22,9 @@ function AuthProvider({ children }) {
 	const login = ({ username }) => {
 		const isAdmin = adminList.find((admin) => admin === username);
 		const isEditor = editorList.find((editor) => editor === username);
+		const isUser = userList.find((user) => user === username);
 
-		setUser({ username, isAdmin, isEditor });
+		setUser({ username, isAdmin, isEditor, isUser });
 		navigate(from, { replace: true });
 	};
 

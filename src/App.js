@@ -42,11 +42,11 @@ function App() {
 							}
 						/>
 						<Route
-							path="/profile"
+							path="/profile/:slug"
 							element={
-								<AuthRoute>
-									<ProfilePage />
-								</AuthRoute>
+								// <AuthRoute>
+								<ProfilePage />
+								// </AuthRoute>
 							}
 						/>
 						<Route
